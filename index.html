@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>نظام إدارة النتائج</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark app-navbar">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">نظام إدارة النتائج</a>
+      <span class="navbar-text text-white-50 small">Student Results Management</span>
+    </div>
+  </nav>
+
+  <main class="container py-5">
+    <header class="text-center mb-5">
+      <span class="eyebrow">لوحة التحكم</span>
+      <h1 class="fw-bold mt-2">إدارة نتائج الطلاب</h1>
+      <p class="text-secondary mb-0">أضف بيانات الطلاب، وتابع النتائج، وفعّل لجنة الرأفة.</p>
+    </header>
+
+    <div class="row g-4">
+      <section class="col-lg-5">
+        <div class="card app-card h-100">
+          <div class="card-body p-4">
+            <h2 class="section-title h4 mb-4">إضافة طالب جديد</h2>
+            <form id="studentForm" novalidate>
+              <div class="mb-3">
+                <label for="studentName" class="form-label">اسم الطالب</label>
+                <input type="text" class="form-control" id="studentName" placeholder="اكتب اسم الطالب">
+              </div>
+              <div class="row g-3">
+                <div class="col-12">
+                  <label for="grade1" class="form-label">درجة المادة الأولى</label>
+                  <input type="number" class="form-control" id="grade1" min="0" max="100" step="any" placeholder="من 0 إلى 100">
+                </div>
+                <div class="col-12">
+                  <label for="grade2" class="form-label">درجة المادة الثانية</label>
+                  <input type="number" class="form-control" id="grade2" min="0" max="100" step="any" placeholder="من 0 إلى 100">
+                </div>
+                <div class="col-12">
+                  <label for="grade3" class="form-label">درجة المادة الثالثة</label>
+                  <input type="number" class="form-control" id="grade3" min="0" max="100" step="any" placeholder="من 0 إلى 100">
+                </div>
+                <div class="col-12">
+                  <label for="attendance" class="form-label">نسبة الحضور</label>
+                  <input type="number" class="form-control" id="attendance" min="0" max="100" step="any" placeholder="من 0 إلى 100">
+                </div>
+              </div>
+
+              <div id="errorBox" class="alert alert-danger mt-3 d-none" role="alert" aria-live="polite"></div>
+              <button type="button" id="addStudentBtn" class="btn btn-primary w-100 mt-3">إضافة طالب</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="col-lg-7">
+        <div class="card app-card mb-4">
+          <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-center gap-2 mb-3">
+              <h2 class="section-title h4 mb-0">قائمة الطلاب</h2>
+              <span id="studentCount" class="badge rounded-pill text-bg-light">0 طالب</span>
+            </div>
+            <div id="studentsList" class="students-list">
+              <p class="empty-state mb-0">لم تتم إضافة أي طالب حتى الآن.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card app-card">
+          <div class="card-body p-4">
+            <h2 class="section-title h4 mb-3">تقرير لجنة الرأفة</h2>
+            <p class="text-secondary small">يتم اختيار الطلاب الذين يتراوح متوسط درجاتهم قبل الرأفة بين 40 و49، ثم إضافة 5 درجات إلى متوسط كل منهم.</p>
+            <button type="button" id="mercyBtn" class="btn btn-success w-100 mb-3">تفعيل لجنة الرأفة</button>
+            <div id="reportBox" class="report-box" aria-live="polite">
+              <p class="empty-state mb-0">لم يتم إنشاء التقرير بعد.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer class="text-center text-secondary small mt-5">مشروع JavaScript النهائي — نظام إدارة النتائج</footer>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

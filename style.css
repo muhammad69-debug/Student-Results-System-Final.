@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --navy: #142b4a;
+  --blue: #2864b4;
+  --soft-bg: #f3f6fb;
+  --text: #1d2b3f;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Cairo', Tahoma, sans-serif;
+  background: var(--soft-bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.app-navbar {
+  background: linear-gradient(110deg, #142b4a, #24558c);
+  box-shadow: 0 4px 18px rgba(20, 43, 74, .12);
+}
+
+.navbar-brand { letter-spacing: .2px; }
+
+.eyebrow {
+  display: inline-block;
+  padding: 6px 15px;
+  border-radius: 30px;
+  color: var(--blue);
+  background: #e5eefb;
+  font-size: .85rem;
+  font-weight: 700;
+}
+
+h1 { color: var(--navy); }
+
+.app-card {
+  border: 1px solid #e7edf5;
+  border-radius: 18px;
+  box-shadow: 0 8px 28px rgba(25, 49, 79, .06);
+}
+
+.section-title {
+  color: var(--navy);
+  font-weight: 800;
+}
+
+.form-label { font-weight: 700; font-size: .93rem; }
+
+.form-control {
+  border-radius: 10px;
+  padding: 11px 13px;
+  border-color: #dce4ef;
+}
+
+.form-control:focus {
+  border-color: #78a7e6;
+  box-shadow: 0 0 0 .2rem rgba(40, 100, 180, .12);
+}
+
+.btn {
+  border-radius: 10px;
+  padding: 11px 16px;
+  font-weight: 700;
+}
+
+.btn-primary { background: var(--blue); border-color: var(--blue); }
+.btn-primary:hover { background: #1e4f91; border-color: #1e4f91; }
+
+.students-list, .report-box {
+  min-height: 100px;
+  border: 1px dashed #d5dfeb;
+  border-radius: 12px;
+  padding: 14px;
+  background: #fbfcfe;
+}
+
+.student-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 4px;
+  border-bottom: 1px solid #edf1f6;
+}
+
+.student-item:last-child { border-bottom: 0; }
+
+.student-name { font-weight: 700; }
+.student-meta { color: #718096; font-size: .85rem; }
+
+.empty-state {
+  color: #8a97a8;
+  text-align: center;
+  padding: 22px 8px;
+}
+
+.report-student {
+  background: #fff;
+  border: 1px solid #e4ebf3;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+
+.report-summary {
+  background: #eaf6ef;
+  color: #17643a;
+  border-radius: 10px;
+  padding: 13px;
+  font-weight: 700;
+  margin-top: 12px;
+}
+
+@media (max-width: 576px) {
+  main.container { padding-top: 2rem !important; }
+  header { margin-bottom: 2rem !important; }
+  h1 { font-size: 1.7rem; }
+}
